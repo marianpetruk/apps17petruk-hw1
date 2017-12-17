@@ -25,8 +25,9 @@ public class JsonArray extends Json {
         while (jsonIterator.hasNext()) {
             Json json = jsonIterator.next();
             jsonStr.append(json.toJson());
-            if (jsonIterator.hasNext())
+            if (jsonIterator.hasNext()) {
                 jsonStr.append(", ");
+            }
         }
         return jsonStr.toString();
     }

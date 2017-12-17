@@ -10,7 +10,7 @@ import java.util.List;
  * Changed by Marian Petruk on 17/12/2017
  */
 public class Student extends BasicStudent {
-    private final int MIN_PASS_MARK = 3;
+    private static final int MIN_PASS_MARK = 3;
     protected List<Tuple<String, Integer>> examList;
 
 
@@ -21,7 +21,7 @@ public class Student extends BasicStudent {
 
     @Override
     public JsonObject toJsonObject() {
-        JsonObject JSONObject = super.toJsonObject();
+        JsonObject jsonObject = super.toJsonObject();
         int numberOfExams = this.examList.size();
         JsonObject[] JsonExamsArray = new JsonObject[numberOfExams];
         int index = 0;
@@ -34,7 +34,7 @@ public class Student extends BasicStudent {
         }
         JsonArray examsJsonArray = new JsonArray(JsonExamsArray);
         JsonPair exams = new JsonPair("exams", examsJsonArray);
-        JSONObject.add(exams);
-        return JSONObject;
+        jsonObject.add(exams);
+        return jsonObject;
     }
 }
