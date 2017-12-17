@@ -4,6 +4,7 @@ import json.*;
 
 /**
  * Created by Andrii_Rodionov on 1/5/2017.
+ * Changed by Marian Petruk on 17/12/2017
  */
 public class BasicStudent implements Jsonable {
 
@@ -22,7 +23,9 @@ public class BasicStudent implements Jsonable {
 
     @Override
     public JsonObject toJsonObject() {
-        // ToDo
-        return null;
+        JsonPair name = new JsonPair("name", new JsonString(this.name));
+        JsonPair surname = new JsonPair("surname", new JsonString(this.surname));
+        JsonPair year = new JsonPair("year", new JsonNumber(this.year));
+        return new JsonObject(name, surname, year);
     }
 }
