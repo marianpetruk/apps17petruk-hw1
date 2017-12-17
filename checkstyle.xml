@@ -23,8 +23,6 @@
     </module>
 
 
-
-
     <!-- =========================================================================== -->
     <!-- =========================================================================== -->
     <!--                   TREEWALKER BEGINS HERE                                    -->
@@ -110,13 +108,14 @@
         <module name="NoFinalizer"/>
         <module name="SuperClone"/>
         <module name="SuperFinalize"/>
-        
+
         <!-- Avoid masking of OutOfMemoryError or NullPointerExceptionError -->
         <module name="IllegalCatch"/>
 
         <!-- Don't allow variables to be declared of wrapper types -->
         <module name="IllegalType">
-            <property name="illegalClassNames" value="java.lang.Boolean, java.lang.Integer, java.lang.Double, java.lang.Float, java.lang.Character, java.lang.Long, java.lang.Short, java.lang.Byte, java.lang.Class"/>
+            <property name="illegalClassNames"
+                      value="java.lang.Boolean, java.lang.Integer, java.lang.Double, java.lang.Float, java.lang.Character, java.lang.Long, java.lang.Short, java.lang.Byte, java.lang.Class"/>
         </module>
 
         <module name="DeclarationOrder"/>
@@ -126,7 +125,6 @@
             <property name="reliefPattern" value="continue in next case"/>
         </module>
         <module name="OneStatementPerLine"/>
-
 
 
         <!-- =========================================================================== -->
@@ -149,7 +147,8 @@
         <module name="AvoidStaticImport"/>
 
         <module name="IllegalImport">
-            <property name="illegalPkgs" value="java.sql, sun, java.net, java.security, javax, java.applet, java.beans, java.nio, java.rmi, java.text, java.lang.reflect, java.lang.instrument"/>
+            <property name="illegalPkgs"
+                      value="java.sql, sun, java.net, java.security, javax, java.applet, java.beans, java.nio, java.rmi, java.text, java.lang.reflect, java.lang.instrument"/>
         </module>
 
         <module name="RedundantImport"/>
@@ -300,7 +299,6 @@
         </module>
 
         <module name="NeedBraces"/>
-
 
 
     </module>

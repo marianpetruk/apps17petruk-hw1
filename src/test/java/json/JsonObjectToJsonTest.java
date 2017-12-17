@@ -16,7 +16,7 @@ public class JsonObjectToJsonTest {
 
         String expectedJSON = "{}";
 
-        JSONAssert.assertEquals(expectedJSON, jsonObject.toJson(),true);
+        JSONAssert.assertEquals(expectedJSON, jsonObject.toJson(), true);
     }
 
     @Test

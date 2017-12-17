@@ -9,11 +9,11 @@ import java.util.Set;
  */
 public class JsonObject extends Json {
 
-    private final HashMap<String, Json> JSONPairs = new HashMap<String,Json>();
+    private final HashMap<String, Json> JSONPairs = new HashMap<String, Json>();
 
 
     public JsonObject(JsonPair... jsonPairs) {
-        for(JsonPair pair : jsonPairs){
+        for (JsonPair pair : jsonPairs) {
             JSONPairs.put(pair.key, pair.value);
         }
 
@@ -24,13 +24,13 @@ public class JsonObject extends Json {
         StringBuilder jsonString = new StringBuilder("{");
         Set<String> keys = JSONPairs.keySet();
         int index = 0;
-        for(String key: keys){
+        for (String key : keys) {
             index++;
             jsonString.append("'");
             jsonString.append(key);
             jsonString.append("': ");
             jsonString.append(JSONPairs.get(key).toJson());
-            if(index < keys.size()){
+            if (index < keys.size()) {
                 jsonString.append(", ");
             }
         }
@@ -42,7 +42,7 @@ public class JsonObject extends Json {
     }
 
     public Json find(String name) {
-        if(JSONPairs.containsKey(name)){
+        if (JSONPairs.containsKey(name)) {
             return JSONPairs.get(name);
         }
         return null;
@@ -50,8 +50,8 @@ public class JsonObject extends Json {
 
     public JsonObject projection(String... names) {
         JsonObject projectedObject = new JsonObject();
-        for(String name: names){
-            if(JSONPairs.containsKey(name)){
+        for (String name : names) {
+            if (JSONPairs.containsKey(name)) {
                 JsonPair projectedPair = new JsonPair(name, JSONPairs.get(name));
                 projectedObject.add(projectedPair);
             }

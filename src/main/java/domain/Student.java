@@ -25,10 +25,10 @@ public class Student extends BasicStudent {
         int numberOfExams = this.examList.size();
         JsonObject[] JsonExamsArray = new JsonObject[numberOfExams];
         int index = 0;
-        for(Tuple<String, Integer> exam: examList){
+        for (Tuple<String, Integer> exam : examList) {
             JsonPair examName = new JsonPair("course", new JsonString(exam.key));
             JsonPair examMark = new JsonPair("mark", new JsonNumber(exam.value));
-            JsonPair examPassed = new JsonPair("passed", new JsonBoolean(exam.value >= MIN_PASS_MARK));
+            JsonPair examPassed = new JsonPair("passed", new JsonBoolean(!(exam.value < MIN_PASS_MARK)));
             JsonExamsArray[index] = new JsonObject(examName, examMark, examPassed);
             index++;
         }

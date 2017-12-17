@@ -20,14 +20,14 @@ public class JsonArray extends Json {
     }
 
     private String getJsonArrBody() {
-        String jsonStr = "";
+        StringBuilder jsonStr = new StringBuilder();
         Iterator<Json> jsonIterator = jsons.iterator();
         while (jsonIterator.hasNext()) {
             Json json = jsonIterator.next();
-            jsonStr += json.toJson();
+            jsonStr.append(json.toJson());
             if (jsonIterator.hasNext())
-                jsonStr += ", ";
+                jsonStr.append(", ");
         }
-        return jsonStr;
+        return jsonStr.toString();
     }
 }
